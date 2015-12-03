@@ -62,7 +62,7 @@ remote_file country_src_filepath do
       File.mtime(country_src_filepath) > Time.now - 86_400
   end
   source   node['nginx']['geoip']['country_dat_url']
-  checksum node['nginx']['geoip']['country_dat_checksum']
+  #checksum node['nginx']['geoip']['country_dat_checksum']
   owner    'root'
   group    node['root_group']
   mode     '0644'
@@ -84,7 +84,7 @@ if node['nginx']['geoip']['enable_city']
         File.mtime(city_src_filepath) > Time.now - 86_400
     end
     source   node['nginx']['geoip']['city_dat_url']
-    checksum node['nginx']['geoip']['city_dat_checksum']
+    #checksum node['nginx']['geoip']['city_dat_checksum']
     owner    'root'
     group    node['root_group']
     mode     '0644'
